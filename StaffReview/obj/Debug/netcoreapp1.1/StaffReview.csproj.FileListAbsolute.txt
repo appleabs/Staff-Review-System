@@ -1,0 +1,9 @@
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\bin\Debug\netcoreapp1.1\StaffReview.deps.json
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\bin\Debug\netcoreapp1.1\StaffReview.runtimeconfig.json
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\bin\Debug\netcoreapp1.1\StaffReview.runtimeconfig.dev.json
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\bin\Debug\netcoreapp1.1\StaffReview.dll
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\bin\Debug\netcoreapp1.1\StaffReview.pdb
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\obj\Debug\netcoreapp1.1\StaffReview.csprojResolveAssemblyReference.cache
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\obj\Debug\netcoreapp1.1\StaffReview.AssemblyInfo.cs
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\obj\Debug\netcoreapp1.1\StaffReview.dll
+c:\users\jenny\documents\visual studio 2017\Projects\StaffReview\StaffReview\obj\Debug\netcoreapp1.1\StaffReview.pdb
