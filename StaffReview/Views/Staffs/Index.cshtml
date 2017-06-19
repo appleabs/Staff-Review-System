@@ -1,4 +1,4 @@
-@model IEnumerable<StaffReview.Models.Staff>
+@model StaffReview.Models.JobTitleViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,29 +9,40 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Staffs" asp-action="Index" method="get">
+    <p>
+        <select asp-for="JobTitle" asp-items="Model.JobTitles">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" name="searchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.JobTitle)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Rating)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Review)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffs[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffs[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffs[0].JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffs[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffs[0].Review)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.staffs) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)

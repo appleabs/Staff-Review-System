@@ -18,10 +18,32 @@ namespace StaffReview.Controllers
             _context = context;    
         }
 
-        // GET: Staffs
-        public async Task<IActionResult> Index()
+        // Requires using Microsoft.AspNetCore.Mvc.Rendering;
+        public async Task<IActionResult> Index(string JobTitle, string searchString)
         {
-            return View(await _context.Staff.ToListAsync());
+            // Use LINQ to get list of genres.
+            IQueryable<string> ratingQuery = from m in _context.Staff
+                                            orderby m.JobTitle
+                                            select m.JobTitle;
+
+            var staffs = from m in _context.Staff
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staffs = staffs.Where(s => s.FirstName.Contains(searchString));
+            }
+
+            if (!String.IsNullOrEmpty(JobTitle))
+            {
+                staffs = staffs.Where(x => x.JobTitle == JobTitle);
+            }
+
+            var JobTitleVM = new JobTitleViewModel();
+            JobTitleVM.JobTitles = new SelectList(await ratingQuery.Distinct().ToListAsync());
+            JobTitleVM.staffs = await staffs.ToListAsync();
+
+            return View(JobTitleVM);
         }
 
         // GET: Staffs/Details/5
